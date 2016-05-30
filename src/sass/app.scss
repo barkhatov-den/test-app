@@ -1,0 +1,104 @@
+/********************        Global         ********************/
+input, textarea {
+  outline: none !important;
+}
+
+/********************     Sign-in form     ********************/
+h2 {
+  margin-bottom: 30px !important;
+}
+.form-horizontal {
+  padding-top: 50px;
+}
+.date-of-birth .col-xs-1 {
+  width: 11.1%;
+}
+.sign-in .btn-primary {
+  margin-left: 72px;
+}
+.sign-in .btn-primary, .sign-in .btn-danger {
+  width: 122px;
+}
+.sign-in .col-xs-offset-4 {
+  margin-left: 38.5%;
+}
+.sign-in .sign-up {
+  margin-left: 86px;
+  cursor: pointer !important;
+}
+.error-message {
+  color: #a94442;
+  padding: 10px 0 0 83px;
+}
+
+/********************     Sign-up form     ********************/
+.sign-up .col-xs-offset-5 {
+  margin-left: 44.2%;
+}
+.sign-up .btn-primary {
+  width: 122px;
+}
+
+/********************     Create submit     ********************/
+.create {
+  position: absolute;
+  top: 1px;
+  right: 10px;
+  width: 122px !important;
+  padding-top: 0;
+}
+
+/*********************      User list   ***********************/
+.userlist {
+  text-align: center;
+}
+h2.users {
+  margin: 0;
+  padding-top: 23px;
+}
+.create-button {
+  position: absolute;
+  top: 24px;
+  right: 10px;
+  width: 100px;
+}
+tr:first-child {
+  background-color: #E6E5E5 !important;
+  font-weight: bold;
+}
+.edit {
+  position: relative;
+}
+
+/* buttons edit and delete*/
+button.delete, a.edit {
+  display: none;
+  position: absolute;
+  margin-top: -5px;
+  width: 48px;
+  height: 31px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  color: #337ab7;
+}
+button.delete {
+  padding: 3px 0 0 1px;
+}
+button.delete:hover {
+  background-color: #e6e6e6;
+}
+a.edit {
+  padding: 6px 0 0 1px;
+  right: 70px;
+}
+tr.hover-magic:hover button.delete, tr.hover-magic:hover a.edit {
+  display: block;
+}
+/* END buttons edit and delete*/
+
+button.delete {
+  right: 20px;
+  color: #a94442;
+}
+/************************** END User list **************************/

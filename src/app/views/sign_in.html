@@ -1,0 +1,27 @@
+<form name="signIn" class="form-horizontal" ng-controller="SigninController" ng-submit="checkForm(user, signIn)" novalidate>
+    <div class="col-xs-offset-4 col-xs-8">
+        <h2>Sign In</h2>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' : signIn.email.$invalid && (!signIn.email.$pristine || signIn.$submitted) }">
+        <label class="control-label col-xs-4" for="inputEmail">Email:</label>
+        <div class="col-xs-4">
+            <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email" ng-model="user.email" required>
+            <p ng-show="signIn.email.$invalid && (!signIn.email.$pristine || signIn.$submitted)" class="help-block">Enter a valid email.</p>
+        </div>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error' : signIn.password.$invalid && (!signIn.password.$pristine || signIn.$submitted) }">
+        <label class="control-label col-xs-4" for="inputPassword">Password:</label>
+        <div class="col-xs-4">
+            <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Enter the password" ng-model="user.password" required>
+            <p ng-show="signIn.password.$invalid && (!signIn.password.$pristine || signIn.$submitted)" class="help-block">You name is required.</p>
+        </div>
+    </div>
+    <br />
+    <div class="form-group sign-in">
+        <div class="col-xs-offset-4 col-xs-8">
+            <input type="submit" class="btn btn-primary" value="Sign In">
+            <a ng-href="#/signup" class="sign-up">Sign Up</a>
+            <p class="error-message">{{errorMessage}}</p>
+        </div>
+    </div>
+</form>
