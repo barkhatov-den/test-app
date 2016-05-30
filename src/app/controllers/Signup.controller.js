@@ -1,7 +1,7 @@
 export default function SignupController($scope, $location, $state)  {
     $scope.user = {};
 
-/***************************   Bootstrap Datepicker Popup   *************************/
+    /***************************   Bootstrap Datepicker Popup   *************************/
     $scope.popup = {};
 
     $scope.altInputFormats = ['M!/d!/yyyy'];
@@ -18,11 +18,11 @@ export default function SignupController($scope, $location, $state)  {
         $scope.popup.opened = true;
     };
 
-/*******************************   END Bootstrap Datepicker Popup   **********************/
+    /*******************************   END Bootstrap Datepicker Popup   **********************/
     $scope.submitForm = function(val, form) {
         let users = [];
 
-/****************************     Set data to localstorage        ************************/
+        /****************************     Set data to localstorage        ************************/
 
         if (form.$invalid) {
             return false;
@@ -40,6 +40,7 @@ export default function SignupController($scope, $location, $state)  {
         localStorage.setItem('registeredUser', JSON.stringify(users));
         $state.go('signin');
 
-/************************     END set data to localstorage         **************************/
+        /************************     END set data to localstorage         **************************/
     }
 }
+
