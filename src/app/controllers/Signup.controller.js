@@ -1,4 +1,4 @@
-export default function SignupController($scope, $location)  {
+export default function SignupController($scope, $location, $state)  {
     $scope.user = {};
 
 /***************************   Bootstrap Datepicker Popup   *************************/
