@@ -13,6 +13,9 @@ export default class RoutesCheck {
                 if (!this.userFactory.registered && ['/signin', '/signup'].indexOf(toState.url) === -1) {
                     event.preventDefault();
                     return this.$state.go('signin');
+                } else if (this.userFactory.registered && !(['/signin', '/signup'].indexOf(toState.url) === -1)) {
+                    event.preventDefault();
+                    return this.$state.go('dashboard');
                 }
 
                 return true;
