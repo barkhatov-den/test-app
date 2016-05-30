@@ -38,7 +38,7 @@ export default function SignupController($scope, $location)  {
         val.registered = 'false';
         users.push(val);
         localStorage.setItem('registeredUser', JSON.stringify(users));
-        $location.path('/sign_in');
+        $state.go('signin');
 
 /************************     END set data to localstorage         **************************/
     }
