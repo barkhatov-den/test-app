@@ -1,4 +1,4 @@
-export default function SigninController($scope, $location, userFactory) {
+export default function SigninController($scope, $state, userFactory) {
 
 /*************************       Compare data from Form and Localstoge          ****************************/
 
@@ -8,7 +8,14 @@ export default function SigninController($scope, $location, userFactory) {
     });
     $scope.checkForm = function(user, form) {
         $scope.userMessage = '';
-        var restoredSession = JSON.parse(localStorage.getItem('registeredUser'));
+        var restoredSession;
+        try {
+            restoredSession = JSON.parse(localStorage.getItem('registeredUser'));
+            if (!Array.isArray(restoredSession)) restoredSession = [];
+        } catch (e) {
+            restoredSession = [];
+        }
+
         for (var i = 0; i < restoredSession.length; i++) {
             for (var key in restoredSession[i]) {
                 if (restoredSession[i].email == user.email) {
@@ -19,12 +26,13 @@ export default function SigninController($scope, $location, userFactory) {
                         userFactory.registered = true;
                         // Set information of user id making Edition of user date possible;
                         userFactory.id = restoredSession[i].id;
-                        $location.path('/');
+                        $state.go('dashboard');
                     }
                 }
             }
-            $scope.errorMessage = 'User not found!';
         }
+
+        $scope.errorMessage = 'User not found!';
     };
     /*************************    END Compare data from Form and Localstoge          ****************************/
 }
