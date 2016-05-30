@@ -32,12 +32,12 @@ export default class Routes {
                 template: require('../views/sign_up.html')
             })
             .state('edit', {
-                url: '/:id',
+                url: '/users/:id',
                 controller: 'EditController',
                 //controllerAs: 'vm',
                 template: require('../views/edit.html')
             });
-        this.$urlRouterProvider.otherwise('/signin');
+        this.$urlRouterProvider.otherwise('/');
     }
 
     static factory($urlRouterProvider, $stateProvider){
